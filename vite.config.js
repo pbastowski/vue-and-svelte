@@ -4,11 +4,11 @@ import WindiCSS from 'vite-plugin-windicss'
 import ViteComponents from 'vite-plugin-components'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
-import svelte from '@sveltejs/vite-plugin-svelte'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 import LiveReload from 'vite-plugin-live-reload'
 
 // https://vitejs.dev/config/
-module.exports = defineConfig(({ command, mode }) => {
+export default defineConfig(({ command, mode }) => {
     return {
         plugins: [
             Vue({

@@ -7,17 +7,18 @@
         "serve": "vite preview"
     },
     "dependencies": {
-        "vue": "3.0.11",
-        "@sveltejs/vite-plugin-svelte": "1.0.0-next.9",
-        "@vitejs/plugin-vue": "1.2.2",
+        "@sveltejs/vite-plugin-svelte": "1.0.0-next.11",
+        "@vitejs/plugin-vue": "1.2.3",
         "@vue/compiler-sfc": "3.0.11",
-        "sass": "1.32.12",
-        "vite": "2.2.4",
-        "vite-plugin-components": "0.8.4",
+        "sass": "1.35.1",
+        "vite": "2.3.8",
+        "vite-plugin-components": "0.11.2",
         "vite-plugin-live-reload": "2.1.0",
-        "vite-plugin-md": "0.6.3",
-        "vite-plugin-pages": "0.11.1",
-        "vite-plugin-windicss": "0.15.10",
-        "vue-router": "4.0.6"
+        "vite-plugin-md": "0.6.7",
+        "vite-plugin-pages": "0.13.2",
+        "vite-plugin-windicss": "1.1.0",
+        "vue": "3.0.11",
+        "vue-router": "4.0.6",
+        "svelte": "3.38.3"
     }
 }
