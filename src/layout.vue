@@ -34,3 +34,14 @@
 
     const $store = inject('$store')
 </script>
+
+<style>
+    .b1,
+    [b1] {
+        border: 1px dashed red;
+    }
+    .b2,
+    [b2] {
+        border: 1px dashed blue;
+    }
+</style>
