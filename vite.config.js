@@ -6,6 +6,7 @@ import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import LiveReload from 'vite-plugin-live-reload'
+import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -24,6 +25,9 @@ export default defineConfig(({ command, mode }) => {
                 },
             }),
 
+            // Vue components as Markdown plugin
+            Markdown(),
+
             // Automatic component registration upon usage
             ViteComponents({
                 // Custom folder in which components
@@ -34,6 +38,15 @@ export default defineConfig(({ command, mode }) => {
 
                 // allow auto import and register components used in markdown
                 customLoaderMatcher: path => path.endsWith('.md'),
+
+                // Support auto importing of used icons
+                customComponentResolvers: ViteIconsResolver(),
+            }),
+
+            ViteIcons({
+                // scale: 1, // Scale of icons against 1em
+                defaultClass: 'b1',
+                defaultStyle: 'viewBox: 4 4 16 16;',
             }),
 
             // File based routing - all page components are loaded async
@@ -41,9 +54,6 @@ export default defineConfig(({ command, mode }) => {
                 exclude: ['**/components/*.vue'],
                 extensions: ['vue', 'js', 'md'],
             }),
-
-            // Vue components as Markdown plugin
-            Markdown(),
 
             // Tailwind plugin
             WindiCSS({
