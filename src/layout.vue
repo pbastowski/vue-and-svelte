@@ -30,9 +30,7 @@
 
 <script setup>
     import AppHeader from './app/app-header.wc.svelte'
-    import { inject } from 'vue'
-
-    const $store = inject('$store')
+    import $store from './store.js'
 </script>
 
 <style>
