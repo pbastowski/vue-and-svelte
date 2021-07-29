@@ -14,7 +14,7 @@ if (persist) delete window.localStorage.persist
 if (persist && window.localStorage.todos !== '') {
     store.todos = JSON.parse(window.localStorage.todos)
 }
-// ... or set some default data
+// ... and set some default data
 else
     store.todos = [
         { title: 'Buy Milk' },
