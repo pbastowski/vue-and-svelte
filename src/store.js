@@ -22,7 +22,7 @@ else
         { title: 'Go for a long walk' },
     ]
 
-// Watch for changes to todos and then sve them to localStorage
+// Watch for changes to todos and then save them to localStorage
 watchEffect(() => {
     // save local state of todos
     window.localStorage.todos = JSON.stringify(store.todos)
