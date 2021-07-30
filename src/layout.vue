@@ -26,6 +26,28 @@
     </p>
 
     <pre>{{ $store }}</pre>
+
+    <hr />
+
+    <h3>Renderless</h3>
+
+    <h4>v-input</h4>
+    <v-input #default="{ abc, inc, dec }">
+        <button @click="dec">-1</button>
+        testing... {{ abc }}
+        <button @click="inc">+1</button>
+    </v-input>
+
+    <h4>v-input 2</h4>
+    <v-input>
+        <template #previous="{ dec }">
+            <button @click="dec">-1</button>
+        </template>
+        <template #default="{ abc }">testing... {{ abc }} </template>
+        <template #next="{ inc }">
+            <button @click="inc">+1</button>
+        </template>
+    </v-input>
 </template>
 
 <script setup>
