@@ -43,7 +43,7 @@
         <template #previous="{ dec }">
             <button @click="dec">-1</button>
         </template>
-        <template #default="{ abc }">testing... {{ abc }} </template>
+        <template #default="{ abc }"> testing... {{ abc }} </template>
         <template #next="{ inc }">
             <button @click="inc">+1</button>
         </template>
