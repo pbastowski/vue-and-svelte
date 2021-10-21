@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
-import ViteComponents from 'vite-plugin-components'
+import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import LiveReload from 'vite-plugin-live-reload'
-import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
+import ViteIcons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -29,7 +30,7 @@ export default defineConfig(({ command, mode }) => {
             Markdown(),
 
             // Automatic component registration upon usage
-            ViteComponents({
+            Components({
                 // Custom folder in which components
                 dirs: ['src/components'],
 
@@ -37,10 +38,10 @@ export default defineConfig(({ command, mode }) => {
                 extensions: ['vue', 'md'],
 
                 // allow auto import and register components used in markdown
-                customLoaderMatcher: path => path.endsWith('.md'),
+                include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
 
                 // Support auto importing of used icons
-                customComponentResolvers: ViteIconsResolver(),
+                resolvers: [IconsResolver()],
             }),
 
             ViteIcons({
